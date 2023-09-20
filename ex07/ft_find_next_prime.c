@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-beco <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 18:27:05 by ade-beco          #+#    #+#             */
-/*   Updated: 2023/09/19 18:27:05 by ade-beco         ###   ########.fr       */
+/*   Created: 2023/09/20 12:57:47 by ade-beco          #+#    #+#             */
+/*   Updated: 2023/09/20 12:57:52 by ade-beco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,14 @@ int	ft_is_prime(int nb)
 	return (1);
 }
 
+int	ft_find_next_prime(int nb)
+{
+	while (nb < 2147483647 && !ft_is_prime(nb))
+		nb++;
+	return (nb);
+}
+
 /*int	main(void)
 {
-	printf("%d", ft_is_prime(7919));
+	printf("%d", ft_find_next_prime(-10));
 }*/
