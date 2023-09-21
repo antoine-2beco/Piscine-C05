@@ -14,26 +14,24 @@
 
 int	ft_sqrt(int nb)
 {
-	int	i;
 	int	n;
-	int	k;
 
 	n = 1;
-	i = 1;
-	k = 0;
-	while (i < nb)
+	if (nb > 0)
 	{
-		n += 2;
-		i = i + n;
-		k++;
+		while (n * n <= nb)
+		{
+			if (n * n == nb)
+				return (n);
+			else if (n >= 46341)
+				return (0);
+			n++;
+		}
 	}
-	if (i != nb)
-		return (0);
-	else
-		return (k + 1);
+	return (0);
 }
 
 /*int	main(void)
 {
-	printf("%d", ft_sqrt(-2025000000));
+	printf("%d", ft_sqrt(2147395600));
 }*/
